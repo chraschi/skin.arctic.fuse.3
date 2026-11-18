@@ -6,9 +6,9 @@
         {
             "rules": ["{VideoPath}!="],
             "value": [
-                "Action(Stop)",
-                "sleep=0.5",
-                "PlayMedia(\"{VideoPath}\")"
+                "Control.SetFocus(450,0)",
+                "sleep=0.1",
+                "Action(Select)"
             ]
         }
     ]
