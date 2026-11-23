@@ -2442,3 +2442,8 @@ msgstr "Liste Quadratisch"
 msgctxt "#31637"
 msgid "Trailer source"
 msgstr "Trailer-Quelle"
+
+#: /1080i/Dialog_DialogShortcuts.xml
+msgctxt "#31862"
+msgid "Show or hide the search filters."
+msgstr "Suchfilter ein- oder ausblenden."

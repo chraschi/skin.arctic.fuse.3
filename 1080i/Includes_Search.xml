@@ -119,7 +119,9 @@
                 <onup>ClearProperty(RefocusMenu)</onup>
                 <onup>3001</onup>
                 <include content="MultiSearch_OnBack" />
-                <ondown>102</ondown>
+                <ondown condition="!Skin.HasSetting(HomeSwitcher.Search.DisableFilters)">102</ondown>
+                <ondown condition="Skin.HasSetting(HomeSwitcher.Search.DisableFilters) + Skin.HasSetting(HomeSwitcher.Search.Combined)">200</ondown>
+                <ondown condition="Skin.HasSetting(HomeSwitcher.Search.DisableFilters) + !Skin.HasSetting(HomeSwitcher.Search.Combined)">50</ondown>
                 <width>700</width>
                 <!-- <width>750</width>
                 <focusposition>7</focusposition> -->
@@ -302,6 +304,7 @@
             <orientation>horizontal</orientation>
             <onup>$PARAM[onup]</onup>
             <ondown>$PARAM[ondown]</ondown>
+            <visible>!Skin.HasSetting(HomeSwitcher.Search.DisableFilters)</visible>
             <include>Hub_Grouplist_OnLeftRight</include>
             <nested />
         </control>

@@ -920,6 +920,20 @@
                 <visible>$PARAM[enabled]</visible>
                 <visible>$PARAM[visible]</visible>
             </include>
+            <include content="Settings_ButtonImage" description="Filters">
+                <param name="id">9411</param>
+                <param name="groupid">9511</param>
+                <param name="icon">special://skin/extras/icons/filter.png</param>
+                <param name="window">shortcuts</param>
+                <param name="help">$LOCALIZE[31862]</param>
+                <param name="control">radiobutton</param>
+                <param name="label">$LOCALIZE[587]</param>
+                <param name="getlabel">false</param>
+                <onclick>Skin.ToggleSetting(HomeSwitcher.Search.DisableFilters)</onclick>
+                <selected>!Skin.HasSetting(HomeSwitcher.Search.DisableFilters)</selected>
+                <visible>$PARAM[enabled]</visible>
+                <visible>$PARAM[visible]</visible>
+            </include>
             <include content="Settings_ButtonImage" description="Layout">
                 <param name="id">9408</param>
                 <param name="groupid">9508</param>

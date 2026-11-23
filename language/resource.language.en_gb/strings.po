@@ -3434,6 +3434,11 @@ msgctxt "#31861"
 msgid "No results"
 msgstr ""
 
+#: /1080i/Dialog_DialogShortcuts.xml
+msgctxt "#31862"
+msgid "Show or hide the search filters."
+msgstr ""
+
 #: /1080i/Includes_Search.xml
 msgctxt "#31863"
 msgid "Search for"
