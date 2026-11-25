@@ -2470,8 +2470,8 @@ msgstr "Standard"
 
 #: /shortcuts/skinvariables-skinsettings.json
 msgctxt "#31912"
-msgid "Auswahlmen?"
-msgstr "Auswahlmen?"
+msgid "Auswählmen"
+msgstr "Auswählmen"
 
 #: /shortcuts/skinvariables-skinsettings.json
 msgctxt "#31913"
@@ -2485,6 +2485,6 @@ msgstr "Abspielen"
 
 #: /shortcuts/skinvariables-skinsettings.json
 msgctxt "#31915"
-msgid "Zur Warteschlange hinzuf?gen"
-msgstr "Zur Warteschlange hinzuf?gen"
+msgid "Zur Warteschlange hinzufügen"
+msgstr "Zur Warteschlange hinzufügen"
 
