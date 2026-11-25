@@ -324,6 +324,28 @@
         <value>[COLOR=main_fg_30]$LOCALIZE[20459][/COLOR]</value>
     </variable>
 
+    <variable name="Label_Settings_TMDbAction_Movie">
+        <value condition="Skin.String(TMDb.Action.Movie,select)">$LOCALIZE[31912]</value>
+        <value condition="Skin.String(TMDb.Action.Movie,info)">$LOCALIZE[31913]</value>
+        <value condition="Skin.String(TMDb.Action.Movie,play)">$LOCALIZE[31914]</value>
+        <value condition="Skin.String(TMDb.Action.Movie,queue)">$LOCALIZE[31915]</value>
+        <value>$LOCALIZE[31911]</value>
+    </variable>
+    <variable name="Label_Settings_TMDbAction_Tv">
+        <value condition="Skin.String(TMDb.Action.Tv,select)">$LOCALIZE[31912]</value>
+        <value condition="Skin.String(TMDb.Action.Tv,info)">$LOCALIZE[31913]</value>
+        <value condition="Skin.String(TMDb.Action.Tv,play)">$LOCALIZE[31914]</value>
+        <value condition="Skin.String(TMDb.Action.Tv,queue)">$LOCALIZE[31915]</value>
+        <value>$LOCALIZE[31911]</value>
+    </variable>
+    <variable name="Label_Settings_TMDbAction_Episode">
+        <value condition="Skin.String(TMDb.Action.Episode,select)">$LOCALIZE[31912]</value>
+        <value condition="Skin.String(TMDb.Action.Episode,info)">$LOCALIZE[31913]</value>
+        <value condition="Skin.String(TMDb.Action.Episode,play)">$LOCALIZE[31914]</value>
+        <value condition="Skin.String(TMDb.Action.Episode,queue)">$LOCALIZE[31915]</value>
+        <value>$LOCALIZE[31911]</value>
+    </variable>
+
     <variable name="Label_Settings_NavigationOnBack">
         <value condition="$EXP[Exp_Navigation_OnPrevious]">$LOCALIZE[210]</value>
         <value condition="$EXP[Exp_Navigation_OnParent]">$LOCALIZE[31442]</value>

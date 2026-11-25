@@ -796,6 +796,7 @@
         <param name="hidden_button">List_Widget_Row_HiddenButton</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
+                <include>Action_TMDbHelper_ListCore_OnClick</include>
                 <nested />
                 <include content="$PARAM[hidden_button]_OnFocus" condition="$PARAM[hidden_button_enabled]">
                     <param name="prefix">$PARAM[hidden_button_prefix]</param>

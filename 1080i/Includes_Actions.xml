@@ -26,6 +26,34 @@
         <onclick>ClearProperty(TMDbHelper.ListItem.base_label,Home)</onclick>
     </include>
 
+    <!--
+        Keep the TMDb click override in List_Core so it also covers addon lists
+        that do not pass through a view-specific wrapper. Every handler is
+        limited to the Videos window and TMDb Helper items; modal option lists
+        and all unrelated Kodi lists therefore retain their own actions.
+        No handler for the Standard value is intentional: Kodi then applies
+        myvideos.selectaction exactly as configured by the user.
+    -->
+    <include name="Action_TMDbHelper_ListCore_OnClick">
+        <!-- Movies -->
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + Skin.String(TMDb.Action.Movie,select)">ContextMenu</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + Skin.String(TMDb.Action.Movie,info)">Info</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + Skin.String(TMDb.Action.Movie,play)">PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + Skin.String(TMDb.Action.Movie,queue)">Queue</onclick>
+
+        <!-- Episodes take precedence over the parent TV-show container. -->
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Episode,select)">ContextMenu</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Episode,info)">Info</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Episode,play)">PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Episode,queue)">Queue</onclick>
+
+        <!-- TV shows; seasons are deliberately not matched. -->
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEqual(ListItem.DBType,season) + !String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Tv,select)">ContextMenu</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEqual(ListItem.DBType,season) + !String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Tv,info)">Info</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEqual(ListItem.DBType,season) + !String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Tv,play)">PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+        <onclick condition="!System.HasActiveModalDialog + [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.themoviedb.helper/)] + [String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEqual(ListItem.DBType,season) + !String.IsEqual(ListItem.DBType,episode) + Skin.String(TMDb.Action.Tv,queue)">Queue</onclick>
+    </include>
+
     <variable name="Action_DialogInfo_PlayMedia">
         <!-- Play FileNameAndPath -->
         <value condition="!String.IsEmpty(ListItem.FileNameAndPath) + !$EXP[Exp_IsFolder]">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,"playmedia=$INFO[ListItem.FileNameAndPath]")</value>

@@ -240,6 +240,14 @@
             "tags": [
                 "$LOCALIZE[14260]"
             ]
+        },
+        "views_tmdb_actions": {
+            "label": "$LOCALIZE[31907]",
+            "category": "views",
+            "tags": [
+                "$LOCALIZE[31808]",
+                "$LOCALIZE[31060]"
+            ]
         }
     },
     "settings": {
@@ -1736,6 +1744,102 @@
                 {
                     "action": "ActivateWindow(Startup)"
                 }
+            ]
+        },
+        "tmdb_action_movie": {
+            "label": "$LOCALIZE[31908]",
+            "control": "button",
+            "group": "views_tmdb_actions",
+            "label2": "$VAR[Label_Settings_TMDbAction_Movie]",
+            "onclick": [
+                {
+                    "action": "Skin.SetString(TMDb.Action.Movie,select)",
+                    "condition": "!Skin.HasSetting(TMDb.Action.Movie) | Skin.String(TMDb.Action.Movie,standard)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Movie,info)",
+                    "condition": "Skin.String(TMDb.Action.Movie,select)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Movie,play)",
+                    "condition": "Skin.String(TMDb.Action.Movie,info)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Movie,queue)",
+                    "condition": "Skin.String(TMDb.Action.Movie,play)"
+                },
+                {
+                    "action": "Skin.Reset(TMDb.Action.Movie)",
+                    "condition": "Skin.String(TMDb.Action.Movie,queue)"
+                }
+            ],
+            "tags": [
+                "$LOCALIZE[31808]",
+                "$LOCALIZE[31060]"
+            ]
+        },
+        "tmdb_action_tv": {
+            "label": "$LOCALIZE[31909]",
+            "control": "button",
+            "group": "views_tmdb_actions",
+            "label2": "$VAR[Label_Settings_TMDbAction_Tv]",
+            "onclick": [
+                {
+                    "action": "Skin.SetString(TMDb.Action.Tv,select)",
+                    "condition": "!Skin.HasSetting(TMDb.Action.Tv) | Skin.String(TMDb.Action.Tv,standard)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Tv,info)",
+                    "condition": "Skin.String(TMDb.Action.Tv,select)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Tv,play)",
+                    "condition": "Skin.String(TMDb.Action.Tv,info)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Tv,queue)",
+                    "condition": "Skin.String(TMDb.Action.Tv,play)"
+                },
+                {
+                    "action": "Skin.Reset(TMDb.Action.Tv)",
+                    "condition": "Skin.String(TMDb.Action.Tv,queue)"
+                }
+            ],
+            "tags": [
+                "$LOCALIZE[31808]",
+                "$LOCALIZE[31060]"
+            ]
+        },
+        "tmdb_action_episode": {
+            "label": "$LOCALIZE[31910]",
+            "control": "button",
+            "group": "views_tmdb_actions",
+            "label2": "$VAR[Label_Settings_TMDbAction_Episode]",
+            "onclick": [
+                {
+                    "action": "Skin.SetString(TMDb.Action.Episode,select)",
+                    "condition": "!Skin.HasSetting(TMDb.Action.Episode) | Skin.String(TMDb.Action.Episode,standard)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Episode,info)",
+                    "condition": "Skin.String(TMDb.Action.Episode,select)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Episode,play)",
+                    "condition": "Skin.String(TMDb.Action.Episode,info)"
+                },
+                {
+                    "action": "Skin.SetString(TMDb.Action.Episode,queue)",
+                    "condition": "Skin.String(TMDb.Action.Episode,play)"
+                },
+                {
+                    "action": "Skin.Reset(TMDb.Action.Episode)",
+                    "condition": "Skin.String(TMDb.Action.Episode,queue)"
+                }
+            ],
+            "tags": [
+                "$LOCALIZE[31808]",
+                "$LOCALIZE[31060]"
             ]
         }
     }

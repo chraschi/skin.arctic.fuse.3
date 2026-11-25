@@ -2442,3 +2442,49 @@ msgstr "Liste Quadratisch"
 msgctxt "#31637"
 msgid "Trailer source"
 msgstr "Trailer-Quelle"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31907"
+msgid "TMDb Helper Aktionen"
+msgstr "TMDb Helper Aktionen"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31908"
+msgid "Filme"
+msgstr "Filme"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31909"
+msgid "Serien"
+msgstr "Serien"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31910"
+msgid "Episoden"
+msgstr "Episoden"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31911"
+msgid "Standard"
+msgstr "Standard"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31912"
+msgid "Auswahlmen?"
+msgstr "Auswahlmen?"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31913"
+msgid "Informationen anzeigen"
+msgstr "Informationen anzeigen"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31914"
+msgid "Abspielen"
+msgstr "Abspielen"
+
+#: /shortcuts/skinvariables-skinsettings.json
+msgctxt "#31915"
+msgid "Zur Warteschlange hinzuf?gen"
+msgstr "Zur Warteschlange hinzuf?gen"
+
