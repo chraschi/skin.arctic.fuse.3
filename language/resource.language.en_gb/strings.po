@@ -3647,8 +3647,8 @@ msgstr "Episodes"
 
 #: /shortcuts/skinvariables-skinsettings.json
 msgctxt "#31911"
-msgid "Standard"
-msgstr "Standard"
+msgid "Default"
+msgstr "Default"
 
 #: /shortcuts/skinvariables-skinsettings.json
 msgctxt "#31912"
@@ -3670,3 +3670,7 @@ msgctxt "#31915"
 msgid "Add to queue"
 msgstr "Add to queue"
 
+#: /1080i/Dialog_DialogCustom.xml
+msgctxt "#31907"
+msgid "Flixart Visibility"
+msgstr ""
